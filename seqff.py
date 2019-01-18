@@ -20,9 +20,9 @@ from creates import create_newtemp, create_normalizedbincount, create_alluseable
 class SeqFF:
     def __init__(self,
                  bininfo_loc="/home/hyunbin/seqff/supplementary-table2.csv",
-                 input_loc="/data/dataset/gc/female/",
+                 input_loc="/home/woong/TEST/bam_mapped_male_set2/",
                  rdata="/home/hyunbin/seqff/supplementary-file1.rdata",
-                 output_loc="/home/hyunbin/seqff/output/female/"):
+                 output_loc="/home/hyunbin/seqff/output/male_20190114/"):
         #file locations
 
         self.bininfodata_loc = bininfo_loc
@@ -30,11 +30,11 @@ class SeqFF:
         self.input_loc = input_loc
         self.rdata = rdata
 
-        self.newtemp_loc = os.path.join(self.outputDir, "newtemp")
-        self.alluseablebins_loc = os.path.join(self.outputDir, "alluseablebins")
-        self.normalizedbincount_loc = os.path.join(self.outputDir, "normalizedbincount")
-        self.bincounts_loc = os.path.join(self.outputDir, "bincounts")
-        self.results_loc = os.path.join(self.outputDir, "results")
+        self.newtemp_loc = os.path.join(self.output_loc, "newtemp")
+        self.alluseablebins_loc = os.path.join(self.output_loc, "alluseablebins")
+        self.normalizedbincount_loc = os.path.join(self.output_loc, "normalizedbincount")
+        self.bincounts_loc = os.path.join(self.output_loc, "bincounts")
+        self.results_loc = os.path.join(self.output_loc, "results")
 
         #rdata parameters load
         params_seqff = load_rdata(rdata)
@@ -84,8 +84,8 @@ class SeqFF:
         :param rdata: location of supplementary .rdata file
         :type rdata: String
 
-        :param outputDir: where result files are(total 4 directories will be created)
-        :type outputDir: String
+        :param output_lod: where result files are(total 4 directories will be created)
+        :type output_lod: String
 
         :return: None
         """

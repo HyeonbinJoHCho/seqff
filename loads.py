@@ -30,7 +30,7 @@ def load_bininfo(bininfoData):
         bininfo = pd.DataFrame(elems, columns=header)
 
     bininfo.rename(columns={'': "binName"}, inplace=True)
-    #bininfo['binorder'] = range(1, 61928)
+    bininfo['binorder'] = range(1, 61928)
 
     return bininfo
 
